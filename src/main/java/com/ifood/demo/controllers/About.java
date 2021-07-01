@@ -1,4 +1,4 @@
-package com.ifood.controllers;
+package com.ifood.demo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

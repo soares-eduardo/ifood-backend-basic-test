@@ -1,12 +1,13 @@
-package com.ifood;
+package com.ifood.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class IfoodBackendTestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(IfoodBackendTestApplication.class, args);
 	}
+
 }
