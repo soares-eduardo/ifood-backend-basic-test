@@ -9,5 +9,4 @@ public class IfoodBackendTestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(IfoodBackendTestApplication.class, args);
 	}
-
 }
