@@ -6,9 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.util.List;
 
-import org.json.JSONArray;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,12 +39,4 @@ public class WeatherController {
 
         return response.body();
     }
-
-    public static void parse(String response) {
-        JSONArray values = new JSONArray(response);
-        for (int i = 0; i < values.length(); i++) {
-            
-        }
-    }
-
 }
