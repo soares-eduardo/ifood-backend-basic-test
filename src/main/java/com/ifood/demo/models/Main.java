@@ -1,7 +1,7 @@
 package com.ifood.demo.models;
 
 public class Main {
-    
+
     private double temp;
     private int pressure;
 

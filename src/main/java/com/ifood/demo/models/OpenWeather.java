@@ -7,6 +7,7 @@ public class OpenWeather {
     //temperatura, pressão, ensolarado, nublado
     
     private String name;
+    private Main main;
     private List<Weather> weather;
 
     public String getName() {
@@ -15,6 +16,10 @@ public class OpenWeather {
 
     public List<Weather> getWeather() {
         return weather;
+    }
+
+    public Main getMain() {
+        return main;
     }
 
     @Override
