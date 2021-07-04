@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(path = "/about")
-public class AboutController {
+public class ControllerAbout {
 
     @GetMapping
     public String getAbout() {

@@ -12,4 +12,10 @@ public class Main {
     public int getPressure() {
         return pressure;
     }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return super.toString();
+    }
 }
