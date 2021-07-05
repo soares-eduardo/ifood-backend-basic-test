@@ -3,6 +3,7 @@ package com.ifood.demo.controllers;
 import com.ifood.demo.models.OpenWeather;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +23,10 @@ public class ControllerWeather {
     final String URL = "https://api.openweathermap.org/data/2.5/weather";
 
     @GetMapping(value = "/{city}")
+    @Cacheable("weather")
     public OpenWeather getWeatherByCity(@PathVariable String city) {
+
+        System.out.println("Sem cache");
 
         RestTemplate restTemplate = new RestTemplate();
 
