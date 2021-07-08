@@ -1,38 +1,29 @@
 package com.ifood.demo.controllers;
 
 import com.ifood.demo.models.OpenWeather;
+import com.ifood.demo.services.ServiceWeather;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/weather")
 public class ControllerWeather {
 
-    @Value("${api.key}")
-    private String apiKey;
+    @Autowired
+    private ServiceWeather serviceWeather;
 
-    final String URL = "https://api.openweathermap.org/data/2.5/weather";
-
-    @GetMapping(value = "/{city}")
     @Cacheable("weather")
-    public OpenWeather getWeatherByCity(@PathVariable String city) {
-
-        System.out.println("Sem cache");
-
-        RestTemplate restTemplate = new RestTemplate();
-
-        ResponseEntity<OpenWeather> weather = restTemplate.getForEntity(URL + "?appid=" + apiKey + "&q=" + city,
-                OpenWeather.class);
-
-        return weather.getBody();
+    @GetMapping(value = "/{city}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<OpenWeather> getWeatherByCity(@PathVariable String city) {
+        return ResponseEntity.ok(serviceWeather.getWeatherByCity(city));
     }
 }
