@@ -29,7 +29,6 @@ public class OpenWeather {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return super.toString();
     }
 }

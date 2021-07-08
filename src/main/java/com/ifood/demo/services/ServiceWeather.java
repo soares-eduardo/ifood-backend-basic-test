@@ -14,16 +14,15 @@ public class ServiceWeather {
     @Value("${api.key}")
     private String apiKey;
 
-    private ResponseEntity<OpenWeather> weather;
-
     public OpenWeather getWeatherByCity(String city) {
  
-        String URL = "https://api.openweathermap.org/data/2.5/weather?appid=" + apiKey + "&q=" + city;
+        String url = "https://api.openweathermap.org/data/2.5/weather?appid=" + apiKey + "&q=" + city;
 
         RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<OpenWeather> weather = null;
 
         try {
-            weather = restTemplate.getForEntity(URL, OpenWeather.class);
+            weather = restTemplate.getForEntity(url, OpenWeather.class);
         } catch (Exception e) {
             throw new NotFoundException();
         }
