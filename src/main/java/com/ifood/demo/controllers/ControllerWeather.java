@@ -2,6 +2,7 @@ package com.ifood.demo.controllers;
 
 import com.ifood.demo.models.OpenWeather;
 import com.ifood.demo.services.ServiceWeather;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -20,8 +21,13 @@ public class ControllerWeather {
     private ServiceWeather serviceWeather;
 
     @Cacheable("weather")
+    //@HystrixCommand(fallbackMethod = "getFallbackMessage")
     @GetMapping(value = "/{city}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<OpenWeather> getWeatherByCity(@PathVariable String city) {
         return ResponseEntity.ok(serviceWeather.getWeatherByCity(city));
+    }
+
+    public String getFallbackMessage(@PathVariable String city) {
+        return "Deu ruim";
     }
 }
