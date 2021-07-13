@@ -8,7 +8,6 @@ import com.ifood.demo.exceptions.NotFoundException;
 import com.ifood.demo.models.OpenWeather;
 import com.ifood.demo.services.ServiceWeather;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
