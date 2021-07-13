@@ -21,6 +21,8 @@ class ServiceWeatherTest {
     @Test
     void itShouldReturnCityValues() {
 
+        System.out.println("Teste");
+
         // given
         String city = "London";
         String country = "GB";
