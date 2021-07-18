@@ -14,7 +14,7 @@
 	<name>ifood-backend-test</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>8</java.version>
 		<sonar.projectKey>soares-eduardo_ifood-backend-basic-test</sonar.projectKey>
 		<sonar.organization>soares-eduardo</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
